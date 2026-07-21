@@ -110,7 +110,7 @@ export default function Home() {
           <div className="backgroundGrid">
             <div className="timeline">
               <article><span>2026.03 — PRESENT</span><h3>이스트캠프 가디언즈</h3><p>정보보호 및 보안 인프라 운영 관리 · 네트워크, Linux, 보안 관제 실무 교육</p></article>
-              <article><span>2024.03 — 2026.02</span><h3>성공회대학교</h3><p>컴퓨터공학 · 소프트웨어공학 복수전공</p></article>
+              <article><span>2024.03 — 2026.02</span><h3>성공회대학교</h3><p>컴퓨터공학 · 소프트웨어공학 복수전공 · 학점 3.95</p></article>
             </div>
             <div className="certs">
               <p className="kicker">Certificates</p>
