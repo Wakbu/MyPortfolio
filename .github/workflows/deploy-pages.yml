@@ -27,7 +27,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - uses: actions/configure-pages@v5
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
