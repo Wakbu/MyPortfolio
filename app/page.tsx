@@ -2,6 +2,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const projects = [
   {
+    id: "project-tension",
     number: "01",
     name: "TENsion / EstMall",
     period: "2026.07.23 — 08.05",
@@ -20,6 +21,7 @@ const projects = [
     notion: "https://app.notion.com/p/3ada1ad5169d80748994c47220648c27",
   },
   {
+    id: "project-nextbank",
     number: "02",
     name: "NextBank",
     period: "2026.06.01 — 06.22",
@@ -38,6 +40,7 @@ const projects = [
     notion: "https://app.notion.com/p/6d2a1ad5169d822ea62f81d89fcd9e6b",
   },
   {
+    id: "project-shielders",
     number: "03",
     name: "Shielders",
     period: "2026.04.07 — 04.22",
@@ -62,11 +65,26 @@ export default function Home() {
     <main className="folio" id="top">
       <nav className="folioNav" aria-label="주요 메뉴">
         <a className="folioName" href="#top">최준용</a>
-        <div><a href="#work">프로젝트</a><a href="#approach">작업 방식</a><a href="#profile">이력</a></div>
+        <div className="folioNavLinks">
+          <a href="#overview">개요</a>
+          <div className="folioProjectMenu">
+            <a className="folioProjectTrigger" href="#work" aria-haspopup="true">프로젝트 <span aria-hidden="true">↓</span></a>
+            <div className="folioProjectDropdown" aria-label="프로젝트 바로가기">
+              {projects.map((project) => (
+                <a href={`#${project.id}`} key={project.id}>
+                  <span>{project.number}</span>
+                  <strong>{project.name}</strong>
+                  <small>{project.period}</small>
+                </a>
+              ))}
+            </div>
+          </div>
+          <a href="#credentials">교육·대회</a>
+        </div>
         <span>Security Infrastructure</span>
       </nav>
 
-      <header className="folioHero">
+      <header className="folioHero" id="overview">
         <div className="folioHeroMain">
           <p className="folioOverline">Portfolio / 2026</p>
           <h1>보안 인프라를<br /><em>설계하고 검증합니다.</em></h1>
@@ -83,6 +101,18 @@ export default function Home() {
         </dl>
       </header>
 
+      <section className="folioApproach" id="approach" aria-labelledby="approachTitle">
+        <header>
+          <p className="folioOverline">Working notes</p>
+          <h2 id="approachTitle">문제가 생긴 지점에서<br />설정을 다시 읽습니다.</h2>
+        </header>
+        <ol>
+          <li><span>01</span><h3>로그 수집 경로 확인</h3><p>도구 설정부터 바꾸지 않고 실제 로그 파일과 이벤트 생성 지점을 먼저 확인합니다.</p></li>
+          <li><span>02</span><h3>탐지와 차단 역할 분리</h3><p>Firewall, IPS, WAF가 같은 일을 반복하지 않도록 계층별 책임과 검증 기준을 구분합니다.</p></li>
+          <li><span>03</span><h3>운영자가 쓸 수 있게 정리</h3><p>알림에서 끝내지 않고 확인 명령어, 대시보드, 대응 순서까지 하나의 흐름으로 남깁니다.</p></li>
+        </ol>
+      </section>
+
       <section className="folioWork" id="work" aria-labelledby="workTitle">
         <header className="folioSectionHead">
           <p>Selected projects</p>
@@ -91,7 +121,7 @@ export default function Home() {
 
         <div className="folioProjectList">
           {projects.map((project) => (
-            <article className="folioProject" key={project.number}>
+            <article className="folioProject" id={project.id} key={project.number}>
               <header className="folioProjectHead">
                 <span>{project.number}</span>
                 <p>{project.name}</p>
@@ -116,19 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="folioApproach" id="approach" aria-labelledby="approachTitle">
-        <header>
-          <p className="folioOverline">Working notes</p>
-          <h2 id="approachTitle">문제가 생긴 지점에서<br />설정을 다시 읽습니다.</h2>
-        </header>
-        <ol>
-          <li><span>01</span><h3>로그 수집 경로 확인</h3><p>도구 설정부터 바꾸지 않고 실제 로그 파일과 이벤트 생성 지점을 먼저 확인합니다.</p></li>
-          <li><span>02</span><h3>탐지와 차단 역할 분리</h3><p>Firewall, IPS, WAF가 같은 일을 반복하지 않도록 계층별 책임과 검증 기준을 구분합니다.</p></li>
-          <li><span>03</span><h3>운영자가 쓸 수 있게 정리</h3><p>알림에서 끝내지 않고 확인 명령어, 대시보드, 대응 순서까지 하나의 흐름으로 남깁니다.</p></li>
-        </ol>
-      </section>
-
-      <section className="folioProof" id="profile" aria-labelledby="profileTitle">
+      <section className="folioProof" id="credentials" aria-labelledby="profileTitle">
         <header className="folioSectionHead">
           <p>Background &amp; proof</p>
           <h2 id="profileTitle">교육과 대회에서<br />반복해서 검증한 기본기</h2>
