@@ -70,7 +70,14 @@ h1, h2, h3 { word-break: keep-all; }
 .folioMetrics div { padding: 10px 10px 11px 0; border-right: 1px solid var(--line); }
 .folioMetrics div:not(:first-child) { padding-left: 12px; }
 .folioMetrics div:last-child { border-right: 0; }
-.folioMetrics dt { color: #4d4b45; font: 600 10px/1.4 Consolas, monospace; }
+.folioMetrics dt {
+  color: #34332f;
+  font-family: "Segoe UI", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
 .folioMetrics dd { margin: 7px 0 0; font-size: 20px; line-height: 1; letter-spacing: -.04em; }
 .folioCaseStudy { display: grid; gap: 5px; }
 .folioCaseStudy p { display: grid; grid-template-columns: 58px 1fr; gap: 10px; margin: 0; color: #4d4b45; font-size: 12px; line-height: 1.5; }
