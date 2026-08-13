@@ -63,16 +63,23 @@ h1, h2, h3 { word-break: keep-all; }
 .folioProjectHead p { margin: 0; }
 .folioProjectHead time { color: var(--muted); }
 .folioProject h3 { grid-area: title; max-width: 650px; margin: 48px 0 36px; font-size: clamp(38px, 4.25vw, 64px); font-weight: 500; line-height: 1.02; letter-spacing: -.065em; }
-.folioProjectCopy { grid-area: copy; display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 620px; margin: 0; }
+.folioProjectCopy { grid-area: copy; display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 620px; margin: 0; }
 .folioRole { margin: 0; color: var(--red); font: 700 11px/1.6 Consolas, monospace; }
 .folioSummary { margin: 0; color: #36352f; font-size: 15px; line-height: 1.72; }
-.folioProjectCopy ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.folioProjectCopy li { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.45; }
+.folioMetrics { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.folioMetrics div { padding: 10px 10px 11px 0; border-right: 1px solid var(--line); }
+.folioMetrics div:not(:first-child) { padding-left: 12px; }
+.folioMetrics div:last-child { border-right: 0; }
+.folioMetrics dt { color: var(--muted); font: 500 9px/1.35 Consolas, monospace; }
+.folioMetrics dd { margin: 7px 0 0; font-size: 20px; line-height: 1; letter-spacing: -.04em; }
+.folioCaseStudy { display: grid; gap: 5px; }
+.folioCaseStudy p { display: grid; grid-template-columns: 54px 1fr; gap: 9px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+.folioCaseStudy span { color: var(--red); font: 600 9px/1.5 Consolas, monospace; text-transform: uppercase; }
 .folioProjectVisual { grid-area: visual; align-self: center; margin: 48px 0 0; background: #dedad0; }
 .folioProjectVisual img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; mix-blend-mode: multiply; }
 .folioProjectVisual figcaption { padding: 14px 0 0; color: var(--muted); background: transparent; font: 500 10px/1.4 Consolas, monospace; letter-spacing: .04em; text-transform: uppercase; }
-.folioProjectLinks { grid-area: links; display: flex; gap: 24px; margin: 28px 0 0; }
-.folioProjectLinks a { display: flex; justify-content: space-between; gap: 30px; min-width: 200px; padding: 10px 0; border-top: 1px solid var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
+.folioProjectLinks { grid-area: links; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin: 22px 0 0; }
+.folioProjectLinks a { display: flex; justify-content: space-between; gap: 16px; min-width: 0; padding: 9px 0; border-top: 1px solid var(--ink); font-size: 11px; font-weight: 700; text-decoration: none; }
 
 .folioApproach { display: grid; grid-template-columns: .82fr 1.18fr; gap: 9vw; padding: 90px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .folioApproach header { position: static; align-self: start; }
@@ -140,7 +147,7 @@ h1, h2, h3 { word-break: keep-all; }
   .folioProject h3 { margin: 42px 0 34px; font-size: 40px; }
   .folioProjectCopy { grid-template-columns: 1fr; gap: 26px; }
   .folioRole { grid-column: auto; }
-  .folioProjectLinks { flex-direction: column; gap: 0; }
+  .folioProjectLinks { grid-template-columns: 1fr; gap: 0; }
   .folioProjectLinks a { min-width: 0; }
   .folioApproach { padding: 78px 0; }
   .folioApproach li { grid-template-columns: 40px 1fr; }

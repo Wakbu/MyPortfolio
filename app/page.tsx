@@ -14,6 +14,20 @@ const projects = [
       "직접 제작한 CoreWatch-Atlas 서버 모니터링",
       "악성코드 3종 정적·동적 교차 분석 및 IOC 도출",
     ],
+    metrics: [
+      { value: "10,154", label: "Wazuh 누적 경보" },
+      { value: "3,661", label: "ML 분석 이벤트" },
+      { value: "1,318", label: "이상 판정" },
+    ],
+    caseStudy: {
+      problem: "WAF 이벤트가 여러 로그로 나뉘어 동일 공격이 중복 집계됨",
+      action: "ModSecurity Unique ID 기준으로 관련 로그를 그룹화",
+      result: "과대 집계를 줄이고 공격 단위 분석 기준을 명확화",
+    },
+    artifacts: [
+      { label: "SOC 점검 스크립트", href: "/artifacts/tension-soc-health-check.sh" },
+      { label: "DB 복구 검증 스크립트", href: "/artifacts/tension-db-backup-verify.sh" },
+    ],
     stack: "Snort / ModSecurity / Wazuh / Grafana / Ghidra / Procmon",
     image: "tension-architecture.png",
     imageAlt: "EstMall 계층형 방어와 관제 경로 구성도",
@@ -32,6 +46,19 @@ const projects = [
       "Wazuh 이벤트와 Prometheus 지표 통합 시각화",
       "Suricata·iptables 탐지 및 차단 흐름 검증",
       "Shell Script·Webhook 기반 장애 대응 자동화",
+    ],
+    metrics: [
+      { value: "7,099", label: "보안 이벤트" },
+      { value: "351", label: "High Severity" },
+      { value: "4,368", label: "원시 로그 Hits" },
+    ],
+    caseStudy: {
+      problem: "iptables 선차단으로 Suricata 탐지 로그가 남지 않음",
+      action: "체인 순서와 NFQUEUE 전달 구조를 점검해 탐지·차단 분리",
+      result: "공격 트래픽의 탐지 기록과 차단 동작을 함께 검증",
+    },
+    artifacts: [
+      { label: "Wazuh 복구 스크립트", href: "/artifacts/nextbank-recover-wazuh.sh" },
     ],
     stack: "Wazuh / Grafana / Prometheus / Suricata / GoAccess / Shell",
     image: "nextbank-architecture.png",
@@ -52,6 +79,17 @@ const projects = [
       "Linux 구축 및 설정 기준 팀 문서화",
       "rsyslog·LogAnalyzer 중앙 로그 환경 구성",
     ],
+    metrics: [
+      { value: "03", label: "분리 VLAN" },
+      { value: "03", label: "Linux 서버 역할" },
+      { value: "02", label: "검증 로그 유형" },
+    ],
+    caseStudy: {
+      problem: "팀원별 구축 환경 차이로 최종 통합 과정에서 설정 충돌 발생",
+      action: "토폴로지와 설정 기준을 공통 문서로 정리해 환경을 통일",
+      result: "WEB·DB·DNS와 중앙 로그 수집 흐름을 연결해 구축 완료",
+    },
+    artifacts: [],
     stack: "GNS3 / Linux / Routing / VPN / ACL / rsyslog",
     image: "shielders-topology.png",
     imageAlt: "Shielders 기업형 네트워크 토폴로지",
@@ -131,7 +169,14 @@ export default function Home() {
               <div className="folioProjectCopy">
                 <p className="folioRole">{project.role}</p>
                 <p className="folioSummary">{project.summary}</p>
-                <ul>{project.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}</ul>
+                <dl className="folioMetrics">
+                  {project.metrics.map((metric) => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}
+                </dl>
+                <div className="folioCaseStudy">
+                  <p><span>Problem</span>{project.caseStudy.problem}</p>
+                  <p><span>Action</span>{project.caseStudy.action}</p>
+                  <p><span>Result</span>{project.caseStudy.result}</p>
+                </div>
               </div>
               <figure className="folioProjectVisual">
                 <img src={`${basePath}/evidence/${project.image}`} alt={project.imageAlt} loading="lazy" />
@@ -140,6 +185,7 @@ export default function Home() {
               <div className="folioProjectLinks">
                 <a href={`${basePath}${project.slides}`}>발표 자료 보기 <span>↗</span></a>
                 <a href={project.notion} target="_blank" rel="noreferrer">구축 기록 보기 <span>↗</span></a>
+                {project.artifacts.map((artifact) => <a href={`${basePath}${artifact.href}`} key={artifact.href} download>{artifact.label} <span>↓</span></a>)}
               </div>
             </article>
           ))}
