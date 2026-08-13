@@ -6,10 +6,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "최준용 | Security Infrastructure Engineer",
-  description: "탐지부터 대응까지 보안 운영 흐름을 설계하는 최준용의 포트폴리오입니다.",
+  description: "보안 인프라의 설계, 공격 검증, 관제와 대응 과정을 기록한 최준용의 포트폴리오입니다.",
   openGraph: {
     title: "최준용 | Security Infrastructure Engineer",
-    description: "공격을 탐지하고, 운영이 멈추지 않게.",
+    description: "보안 인프라를 설계하고 검증합니다.",
     url: siteUrl,
     siteName: "JUNYONG CHOI",
     locale: "ko_KR",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "최준용 | Security Infrastructure Engineer",
-    description: "공격을 탐지하고, 운영이 멈추지 않게.",
+    description: "보안 인프라를 설계하고 검증합니다.",
   },
 };
 

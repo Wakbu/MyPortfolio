@@ -3,160 +3,154 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const projects = [
   {
     number: "01",
+    name: "TENsion / EstMall",
     period: "2026.07.23 — 08.05",
-    title: "EstMall 통합 보안 인프라 구축",
+    title: "공격 재현부터 사고 대응까지, 하나의 보안 운영 흐름으로",
     role: "팀장 · 프로젝트 총괄 · 관제 서버 구축",
-    summary: "서비스 경로와 관제 경로를 분리하고, 실제 공격 재현부터 계층형 차단, 통합 관제, 악성코드 분석과 사고 대응까지 하나의 침해대응 흐름으로 검증했습니다.",
-    results: [
-      "Firewall·Snort·HAProxy·WAF로 이어지는 계층형 방어 구조 설계",
-      "Wazuh·Grafana·ML·CoreWatch-Atlas를 연결한 통합 관제 환경 구축",
-      "악성코드 3종의 정적·동적 교차 분석과 IOC·대응 절차 도출",
+    summary: "서비스 경로와 관제 경로를 분리하고 Firewall, IPS, WAF, SIEM을 계층별로 연결했습니다. 실제 웹 공격과 악성코드 분석 결과를 탐지·차단·복구 절차까지 이어서 검증했습니다.",
+    outcomes: [
+      "Wazuh·Grafana·ML 기반 통합 관제 환경",
+      "직접 제작한 CoreWatch-Atlas 서버 모니터링",
+      "악성코드 3종 정적·동적 교차 분석 및 IOC 도출",
     ],
-    stack: ["Wazuh", "Grafana", "Snort", "ModSecurity", "Ghidra", "CoreWatch"],
-    href: "https://app.notion.com/p/3ada1ad5169d80748994c47220648c27",
-    featured: true,
+    stack: "Snort / ModSecurity / Wazuh / Grafana / Ghidra / Procmon",
+    image: "tension-architecture.png",
+    imageAlt: "EstMall 계층형 방어와 관제 경로 구성도",
+    slides: "/presentations/tension/",
+    notion: "https://app.notion.com/p/3ada1ad5169d80748994c47220648c27",
   },
   {
     number: "02",
+    name: "NextBank",
     period: "2026.06.01 — 06.22",
-    title: "해킹 방어와 관제 시스템 구축",
+    title: "분산된 보안 도구를 실제 대응 가능한 관제 체계로",
     role: "보안 관제 설계 · 자동화 / 기여도 50%",
-    summary: "취약한 웹 서비스와 서버 인프라를 대상으로 공격 탐지, 차단, 로그 수집, 대시보드, 장애 대응 자동화까지 하나의 관제 흐름으로 연결했습니다.",
-    results: [
-      "Wazuh 보안 이벤트와 Prometheus 서버 지표를 Grafana에 시각화",
-      "Suricata·iptables로 공격 트래픽 탐지 및 차단 흐름 검증",
-      "상태 점검 Shell Script와 Discord Webhook으로 장애 대응 자동화",
+    summary: "External·DMZ·Internal·SOC의 4계층 구조에서 공격 트래픽을 탐지하고 차단했습니다. 서버 상태, 보안 이벤트, 웹 로그를 대시보드와 Discord 알림으로 연결했습니다.",
+    outcomes: [
+      "Wazuh 이벤트와 Prometheus 지표 통합 시각화",
+      "Suricata·iptables 탐지 및 차단 흐름 검증",
+      "Shell Script·Webhook 기반 장애 대응 자동화",
     ],
-    stack: ["Wazuh", "Grafana", "Prometheus", "Suricata", "GoAccess", "Shell"],
-    href: "https://app.notion.com/p/6d2a1ad5169d822ea62f81d89fcd9e6b",
-    featured: false,
+    stack: "Wazuh / Grafana / Prometheus / Suricata / GoAccess / Shell",
+    image: "nextbank-architecture.png",
+    imageAlt: "NextBank 4계층 보안 아키텍처",
+    slides: "/presentations/nextbank/",
+    notion: "https://app.notion.com/p/6d2a1ad5169d822ea62f81d89fcd9e6b",
   },
   {
     number: "03",
+    name: "Shielders",
     period: "2026.04.07 — 04.22",
-    title: "네트워크와 Linux 서버 구축",
+    title: "기업형 네트워크와 Linux 서버의 기본을 직접 구축하며",
     role: "팀장 · 네트워크 설계 · 문서화",
-    summary: "기업형 인프라를 가정해 네트워크 토폴로지와 Linux 서버를 구성하고, VPN·ACL·DB 권한 등 기본 보안 정책을 함께 검토했습니다.",
-    results: [
-      "GNS3 기반 네트워크 토폴로지와 서버 간 통신 흐름 설계",
-      "Linux 서버 구축 과정과 설정 기준을 팀 단위 문서로 표준화",
-      "VPN·ACL·최소 권한 관점의 관리 접근 구조 검토",
+    summary: "기업 환경을 가정한 토폴로지에 VLAN, VPN, ACL과 WEB·DB·DNS 서버를 구성했습니다. 중앙 로그 수집까지 연결해 운영자가 확인할 수 있는 구조로 정리했습니다.",
+    outcomes: [
+      "GNS3 기반 네트워크와 서버 통신 흐름 설계",
+      "Linux 구축 및 설정 기준 팀 문서화",
+      "rsyslog·LogAnalyzer 중앙 로그 환경 구성",
     ],
-    stack: ["GNS3", "Linux", "Routing", "VPN", "ACL", "Notion"],
-    href: "https://app.notion.com/p/2aaa1ad5169d823cbc4781b854563690",
-    featured: false,
+    stack: "GNS3 / Linux / Routing / VPN / ACL / rsyslog",
+    image: "shielders-topology.png",
+    imageAlt: "Shielders 기업형 네트워크 토폴로지",
+    slides: "/presentations/shielders/",
+    notion: "https://app.notion.com/p/2aaa1ad5169d823cbc4781b854563690",
   },
-];
-
-const capabilities = [
-  { index: "01", title: "Security Monitoring", copy: "Wazuh, Grafana, Prometheus를 연동해 보안 이벤트와 서비스 상태를 함께 관찰합니다." },
-  { index: "02", title: "Network & Linux", copy: "GNS3·Packet Tracer 기반 네트워크 구성과 Linux 서버 운영 흐름을 이해합니다." },
-  { index: "03", title: "Attack & Malware Analysis", copy: "패킷·로그 분석과 함께 Ghidra, PEStudio, Procmon으로 악성코드의 정적·동적 행위를 교차 검증합니다." },
-  { index: "04", title: "Automation", copy: "Shell Script, cron, Webhook으로 반복 점검·알림·보고 과정을 자동화합니다." },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <div className="shell">
-        <nav className="nav" aria-label="주요 메뉴">
-          <a className="brand" href="#top" aria-label="최준용 포트폴리오 홈">JUNYONG CHOI</a>
-          <div className="navLinks">
-            <a href="#projects">Projects</a><a href="#evidence">Evidence</a><a href="#awards">Awards</a><a href="#background">Background</a>
-            <span className="status">Security Infrastructure</span>
+    <main className="folio" id="top">
+      <nav className="folioNav" aria-label="주요 메뉴">
+        <a className="folioName" href="#top">최준용</a>
+        <div><a href="#work">프로젝트</a><a href="#approach">작업 방식</a><a href="#profile">이력</a></div>
+        <span>Security Infrastructure</span>
+      </nav>
+
+      <header className="folioHero">
+        <div className="folioHeroMain">
+          <p className="folioOverline">Portfolio / 2026</p>
+          <h1>보안 인프라를<br /><em>설계하고 검증합니다.</em></h1>
+        </div>
+        <div className="folioHeroIntro">
+          <p>도구를 나열하기보다 공격이 어디에서 탐지되고, 어떻게 차단되며, 운영자가 무엇을 확인해야 하는지 설명합니다.</p>
+          <a href="#work">프로젝트 3건 보기 <span>↓</span></a>
+        </div>
+        <dl className="folioFacts">
+          <div><dt>Project</dt><dd>03</dd></div>
+          <div><dt>Training</dt><dd>736h</dd></div>
+          <div><dt>GPA</dt><dd>3.95</dd></div>
+          <div><dt>Focus</dt><dd>Detection<br />&amp; Response</dd></div>
+        </dl>
+      </header>
+
+      <section className="folioWork" id="work" aria-labelledby="workTitle">
+        <header className="folioSectionHead">
+          <p>Selected projects</p>
+          <h2 id="workTitle">구축 결과보다<br />판단의 근거를 보여주는 기록</h2>
+        </header>
+
+        <div className="folioProjectList">
+          {projects.map((project) => (
+            <article className="folioProject" key={project.number}>
+              <header className="folioProjectHead">
+                <span>{project.number}</span>
+                <p>{project.name}</p>
+                <time>{project.period}</time>
+              </header>
+              <h3>{project.title}</h3>
+              <div className="folioProjectCopy">
+                <p className="folioRole">{project.role}</p>
+                <p className="folioSummary">{project.summary}</p>
+                <ul>{project.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}</ul>
+              </div>
+              <figure className="folioProjectVisual">
+                <img src={`${basePath}/evidence/${project.image}`} alt={project.imageAlt} loading="lazy" />
+                <figcaption>{project.stack}</figcaption>
+              </figure>
+              <div className="folioProjectLinks">
+                <a href={`${basePath}${project.slides}`}>발표 자료 보기 <span>↗</span></a>
+                <a href={project.notion} target="_blank" rel="noreferrer">구축 기록 보기 <span>↗</span></a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="folioApproach" id="approach" aria-labelledby="approachTitle">
+        <header>
+          <p className="folioOverline">Working notes</p>
+          <h2 id="approachTitle">문제가 생긴 지점에서<br />설정을 다시 읽습니다.</h2>
+        </header>
+        <ol>
+          <li><span>01</span><h3>로그 수집 경로 확인</h3><p>도구 설정부터 바꾸지 않고 실제 로그 파일과 이벤트 생성 지점을 먼저 확인합니다.</p></li>
+          <li><span>02</span><h3>탐지와 차단 역할 분리</h3><p>Firewall, IPS, WAF가 같은 일을 반복하지 않도록 계층별 책임과 검증 기준을 구분합니다.</p></li>
+          <li><span>03</span><h3>운영자가 쓸 수 있게 정리</h3><p>알림에서 끝내지 않고 확인 명령어, 대시보드, 대응 순서까지 하나의 흐름으로 남깁니다.</p></li>
+        </ol>
+      </section>
+
+      <section className="folioProof" id="profile" aria-labelledby="profileTitle">
+        <header className="folioSectionHead">
+          <p>Background &amp; proof</p>
+          <h2 id="profileTitle">교육과 대회에서<br />반복해서 검증한 기본기</h2>
+        </header>
+        <div className="folioProfileGrid">
+          <div className="folioTimeline">
+            <article><time>2026.03 — 08</time><div><h3>이스트캠프 가디언즈</h3><p>정보보호 및 보안 인프라 운영 관리 · 736시간 수료</p></div></article>
+            <article><time>2024.03 — 2026.02</time><div><h3>성공회대학교</h3><p>컴퓨터공학 · 소프트웨어공학 복수전공 · 학점 3.95</p></div></article>
+            <article><time>2025 / 2023</time><div><h3>정보처리기사 · 네트워크관리사 2급</h3><p>시스템 개발과 네트워크 운영의 기반 지식</p></div></article>
           </div>
-        </nav>
-
-        <section className="hero" id="top" aria-labelledby="headline">
-          <div className="heroTitle">
-            <p className="eyebrow">Security Infrastructure Engineer · Seoul</p>
-            <h1 id="headline">공격을 탐지하고,<br /><em>운영이 멈추지 않게.</em></h1>
+          <div className="folioRecognition">
+            <figure><img src={`${basePath}/evidence/award-ctf-second.png`} alt="인프라 10기 CTF 대회 2등 상장" loading="lazy" /><figcaption><span>Competition</span>CTF 대회 2등</figcaption></figure>
+            <figure><img src={`${basePath}/evidence/award-wargame-third.png`} alt="인프라 10기 워게임 3등 상장" loading="lazy" /><figcaption><span>Competition</span>워게임 3등</figcaption></figure>
+            <figure><img src={`${basePath}/evidence/completion-certificate-redacted.png`} alt="개인 식별정보를 제거한 보안 인프라 과정 수료증" loading="lazy" /><figcaption><span>Completion</span>보안 인프라 과정 수료</figcaption></figure>
           </div>
-          <div className="intro">
-            <p>로그가 생성되는 지점부터 탐지, 분석, 알림, 대응까지 이어지는 흐름을 설계합니다. 문제를 직접 확인하고 기록하며 더 안정적인 운영 방식으로 개선합니다.</p>
-            <a className="cta" href="#projects">프로젝트 살펴보기 <span aria-hidden="true">↘</span></a>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="signalBar" aria-label="포트폴리오 주요 정보">
-          <div><strong>03</strong><span>Security Projects</span></div>
-          <div><strong>736H</strong><span>Infrastructure Training</span></div>
-          <div><strong>02</strong><span>Technical Certificates</span></div>
-          <p>탐지와 대응을 도구별 작업이 아닌 하나의 운영 흐름으로 바라봅니다.</p>
-        </section>
-
-        <section className="projects section" id="projects" aria-labelledby="projectTitle">
-          <header className="sectionHead"><div><p className="kicker">Selected Work</p><h2 id="projectTitle">직접 구축하고<br />검증한 보안 인프라</h2></div><span>2026 / 03 Projects</span></header>
-          <div className="projectGrid">
-            {projects.map((project) => (
-              <article className={`projectCard ${project.featured ? "projectCard--featured" : ""}`} key={project.number}>
-                <div className="projectTop"><span>{project.number} / CASE STUDY</span><span>{project.period}</span></div>
-                <div className="projectBody">
-                  <p className="projectRole">{project.role}</p>
-                  <h3>{project.title}</h3>
-                  <p className="projectSummary">{project.summary}</p>
-                  <ul>{project.results.map((result) => <li key={result}>{result}</li>)}</ul>
-                </div>
-                <div className="projectBottom">
-                  <div className="tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
-                  <a href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.title} 노션 상세 페이지 열기`}>Case study ↗</a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-
-        <section className="evidenceSection" id="evidence" aria-labelledby="evidenceTitle">
-          <header className="sectionHead"><div><p className="kicker">Project Evidence</p><h2 id="evidenceTitle">설계와 구축을 보여주는<br />실제 프로젝트 기록</h2></div><span>06 VISUALS / PROJECT SOURCE</span></header>
-          <div className="evidenceList">
-            <article className="evidenceProject"><div className="evidenceMeta"><span>01 / TENSION</span><span>DEFENSE · SOC · MALWARE</span></div><div className="evidenceCopy"><p className="projectRole">팀장 · 프로젝트 총괄 · 관제 서버 구축</p><h3>EstMall 침해대응 통합 환경</h3><p>서비스 접근 통제, Wazuh·ML 기반 관제, 직접 제작한 CoreWatch-Atlas, 악성코드 정적·동적 분석과 사고 대응 절차를 실제 결과 화면으로 제시합니다.</p></div><div className="evidenceGallery"><figure><img src={`${basePath}/evidence/tension-architecture.png`} alt="EstMall 서비스 경로와 관제 경로" loading="lazy" /><figcaption>01 — 계층형 방어와 로그 수집 경로</figcaption></figure><figure><img src={`${basePath}/evidence/tension-soc.png`} alt="EstMall 통합 관제 페이지" loading="lazy" /><figcaption>02 — 통합 관제와 WAF 이벤트 분석</figcaption></figure></div><div className="evidenceLinks"><a className="presentationLink" href={`${basePath}/presentations/tension/`}>PDF 주요 페이지 보기 →</a><a className="notionCaseLink" href="https://app.notion.com/p/3ada1ad5169d80748994c47220648c27" target="_blank" rel="noreferrer">Notion 구축 기록 ↗</a></div></article>
-            <article className="evidenceProject"><div className="evidenceMeta"><span>02 / NEXTBANK</span><span>SOC · SIEM · AUTOMATION</span></div><div className="evidenceCopy"><p className="projectRole">보안 관제센터(ELK) · 기여도 50%</p><h3>4계층 방어와 통합 보안 관제</h3><p>External·DMZ·Internal·SOC 구조와 Wazuh·Grafana·Discord로 이어지는 탐지·시각화·알림 결과를 실제 화면으로 제시합니다.</p></div><div className="evidenceGallery"><figure><img src={`${basePath}/evidence/nextbank-architecture.png`} alt="NextBank 4계층 보안 아키텍처" loading="lazy" /><figcaption>01 — 4계층 보안 아키텍처</figcaption></figure><figure><img src={`${basePath}/evidence/nextbank-soc.png`} alt="NextBank 통합 관제 결과" loading="lazy" /><figcaption>02 — 통합 관제와 실시간 알림</figcaption></figure></div><a className="presentationLink" href={`${basePath}/presentations/nextbank/`}>PPT 주요 슬라이드 보기 →</a></article>
-            <article className="evidenceProject"><div className="evidenceMeta"><span>03 / SHIELDERS</span><span>NETWORK · LINUX · LOG</span></div><div className="evidenceCopy"><p className="projectRole">팀장 · 네트워크 설계 · 문서화</p><h3>기업형 네트워크와 중앙 로그 환경</h3><p>VLAN 부서망, VPN·ACL, WEB·DB·DNS 서버와 rsyslog·LogAnalyzer의 연결 구조를 실제 발표 자료로 확인할 수 있습니다.</p></div><div className="evidenceGallery"><figure><img src={`${basePath}/evidence/shielders-topology.png`} alt="Shielders 전체 네트워크 구성도" loading="lazy" /><figcaption>01 — 전체 네트워크 구성도</figcaption></figure><figure><img src={`${basePath}/evidence/shielders-monitoring.png`} alt="Shielders 로그 모니터링 구성도" loading="lazy" /><figcaption>02 — 중앙 로그 모니터링 구성</figcaption></figure></div><a className="presentationLink" href={`${basePath}/presentations/shielders/`}>PPT 주요 슬라이드 보기 →</a></article>
-          </div>
-        </section>
-        <section className="capabilities section" id="capabilities" aria-labelledby="capabilityTitle">
-          <header className="sectionHead compact"><div><p className="kicker">Capabilities</p><h2 id="capabilityTitle">도구보다 흐름을 이해하는 역량</h2></div></header>
-          <div className="capabilityGrid">
-            {capabilities.map((item) => <article key={item.index}><span>{item.index}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}
-          </div>
-        </section>
-
-        <section className="problem section" aria-labelledby="problemTitle">
-          <div className="problemIntro"><p className="kicker">How I Work</p><h2 id="problemTitle">문제를 그냥 넘기지 않고,<br />로그와 설정에서 원인을 찾습니다.</h2></div>
-          <div className="problemCases">
-            <article><span>LOG PIPELINE</span><h3>수집되지 않는 웹 로그</h3><p>실제 Apache 로그 경로와 파일명을 확인해 Wazuh Agent 설정을 수정하고 수집 흐름을 정상화했습니다.</p></article>
-            <article><span>TRAFFIC CONTROL</span><h3>탐지와 차단 순서 충돌</h3><p>iptables 룰 순서와 NFQUEUE 전달 구조를 점검해 Suricata 탐지와 차단 흐름을 분리해 검증했습니다.</p></article>
-            <article><span>OPERATIONS</span><h3>알림에서 대응까지</h3><p>장애 유형만 알리지 않고 확인 명령어까지 Discord에 전달해 초기 대응 시간을 줄이는 구조로 개선했습니다.</p></article>
-          </div>
-        </section>
-
-
-        <section className="awardsSection" id="awards" aria-labelledby="awardsTitle">
-          <header className="sectionHead"><div><p className="kicker">Recognition</p><h2 id="awardsTitle">교육 과정에서 증명한<br />실전 문제 해결 역량</h2></div><span>2026 / AWARDS &amp; COMPLETION</span></header>
-          <div className="awardGrid"><article><div className="awardImage"><img src={`${basePath}/evidence/award-ctf-second.png`} alt="인프라 10기 CTF 대회 2등 상장" loading="lazy" /></div><p>01 / CTF COMPETITION</p><h3>CTF 대회 2등</h3></article><article><div className="awardImage"><img src={`${basePath}/evidence/award-wargame-third.png`} alt="인프라 10기 워게임 3등 상장" loading="lazy" /></div><p>02 / WARGAME</p><h3>워게임 3등</h3></article><article><div className="awardImage awardImage--certificate"><img src={`${basePath}/evidence/completion-certificate-redacted.png`} alt="개인 식별정보를 제거한 이스트캠프 가디언즈 과정 수료증" loading="lazy" /></div><p>03 / K-DIGITAL TRAINING</p><h3>보안 인프라 과정 수료</h3><span className="awardNote">2026.03.24 — 08.07 · 736시간</span></article></div>
-        </section>
-        <section className="background section" id="background" aria-labelledby="backgroundTitle">
-          <header className="sectionHead compact"><div><p className="kicker">Background</p><h2 id="backgroundTitle">배움의 기반</h2></div></header>
-          <div className="backgroundGrid">
-            <div className="timeline">
-              <article><span>2026.03 — 2026.08</span><h3>이스트캠프 가디언즈</h3><p>정보보호 및 보안 인프라 운영 관리 · 736시간 수료 · 네트워크, Linux, 보안 관제, 악성코드 분석 실무 교육</p></article>
-              <article><span>2024.03 — 2026.02</span><h3>성공회대학교</h3><p>컴퓨터공학 · 소프트웨어공학 복수전공 · 학점 3.95</p></article>
-            </div>
-            <div className="certs">
-              <p className="kicker">Certificates</p>
-              <div><strong>정보처리기사</strong><span>2025</span></div>
-              <div><strong>네트워크관리사 2급</strong><span>2023</span></div>
-            </div>
-          </div>
-        </section>
-
-        <footer className="footer">
-          <div><p className="kicker">Next Step</p><h2>안정적인 운영을 만드는<br /><em>보안 엔지니어로.</em></h2></div>
-          <div className="footerLinks"><p>프로젝트의 자세한 구축 과정과 문제 해결 기록은 Notion에서 확인할 수 있습니다.</p><a href="https://app.notion.com/p/2f2a1ad5169d832a9a7f818d8c8a8119" target="_blank" rel="noreferrer">Notion portfolio ↗</a></div>
-          <p className="copyright">© 2026 JUNYONG CHOI · SECURITY INFRASTRUCTURE PORTFOLIO</p>
-        </footer>
-      </div>
+      <footer className="folioFooter">
+        <p>다음 문제를<br />끝까지 추적할 준비가 되어 있습니다.</p>
+        <div><a href="https://app.notion.com/p/2f2a1ad5169d832a9a7f818d8c8a8119" target="_blank" rel="noreferrer">Notion portfolio ↗</a><span>© 2026 JUNYONG CHOI</span></div>
+      </footer>
     </main>
   );
 }
