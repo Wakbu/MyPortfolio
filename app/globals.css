@@ -112,7 +112,7 @@ h1, h2, h3 { word-break: keep-all; }
 
 .folioFooter { min-height: 400px; display: grid; grid-template-columns: 1.4fr .6fr; align-items: center; }
 .folioFooter > p { margin: 0; font: 400 clamp(42px, 4.3vw, 68px)/1.04 Georgia, "Noto Serif KR", serif; letter-spacing: -.055em; }
-.folioFooter div { align-self: end; display: flex; justify-content: space-between; padding: 0 0 35px; color: var(--muted); font: 500 10px/1 Consolas, monospace; }
+.folioFooter div { align-self: end; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 24px; padding: 0 0 35px; color: var(--muted); font: 500 10px/1.4 Consolas, monospace; }
 .folioFooter a { color: var(--ink); font-weight: 700; text-decoration: none; }
 
 /* Presentation pages */
@@ -164,7 +164,8 @@ h1, h2, h3 { word-break: keep-all; }
   .folioRecognition img { aspect-ratio: 4 / 5; }
   .folioFooter { min-height: 460px; }
   .folioFooter > p { font-size: 40px; }
-  .folioFooter div { gap: 30px; }
+  .folioFooter div { justify-content: flex-start; gap: 16px 24px; }
+  .folioFooter div span { flex-basis: 100%; }
   .presentationPage{width:min(100% - 28px,520px)}.presentationNav{height:66px}.presentationNav span{display:none}.presentationHero{padding:76px 0 58px}.presentationHero h1{font-size:42px}.slideList{gap:38px;padding:56px 0}.slideList figcaption{font-size:9px}
 }
 

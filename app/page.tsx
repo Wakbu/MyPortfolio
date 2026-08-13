@@ -213,7 +213,11 @@ export default function Home() {
 
       <footer className="folioFooter">
         <p>다음 문제를<br />끝까지 추적할 준비가 되어 있습니다.</p>
-        <div><a href="https://app.notion.com/p/2f2a1ad5169d832a9a7f818d8c8a8119" target="_blank" rel="noreferrer">Notion portfolio ↗</a><span>© 2026 JUNYONG CHOI</span></div>
+        <div>
+          <a href="mailto:qqjy3070@naver.com">qqjy3070@naver.com</a>
+          <a href="https://app.notion.com/p/2f2a1ad5169d832a9a7f818d8c8a8119" target="_blank" rel="noreferrer">Notion portfolio ↗</a>
+          <span>© 2026 JUNYONG CHOI</span>
+        </div>
       </footer>
     </main>
   );
