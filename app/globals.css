@@ -70,11 +70,11 @@ h1, h2, h3 { word-break: keep-all; }
 .folioMetrics div { padding: 10px 10px 11px 0; border-right: 1px solid var(--line); }
 .folioMetrics div:not(:first-child) { padding-left: 12px; }
 .folioMetrics div:last-child { border-right: 0; }
-.folioMetrics dt { color: var(--muted); font: 500 9px/1.35 Consolas, monospace; }
+.folioMetrics dt { color: #4d4b45; font: 600 10px/1.4 Consolas, monospace; }
 .folioMetrics dd { margin: 7px 0 0; font-size: 20px; line-height: 1; letter-spacing: -.04em; }
 .folioCaseStudy { display: grid; gap: 5px; }
-.folioCaseStudy p { display: grid; grid-template-columns: 54px 1fr; gap: 9px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
-.folioCaseStudy span { color: var(--red); font: 600 9px/1.5 Consolas, monospace; text-transform: uppercase; }
+.folioCaseStudy p { display: grid; grid-template-columns: 58px 1fr; gap: 10px; margin: 0; color: #4d4b45; font-size: 12px; line-height: 1.5; }
+.folioCaseStudy span { color: var(--red); font: 700 9.5px/1.55 Consolas, monospace; text-transform: uppercase; }
 .folioProjectVisual { grid-area: visual; align-self: center; margin: 48px 0 0; background: #dedad0; }
 .folioProjectVisual img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; mix-blend-mode: multiply; }
 .folioProjectVisual figcaption { padding: 14px 0 0; color: var(--muted); background: transparent; font: 500 10px/1.4 Consolas, monospace; letter-spacing: .04em; text-transform: uppercase; }
