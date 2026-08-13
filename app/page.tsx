@@ -26,7 +26,7 @@ const projects = [
     },
     artifacts: [
       { label: "SOC 점검 스크립트", href: "/artifacts/tension-soc-health-check.sh" },
-      { label: "DB 복구 검증 스크립트", href: "/artifacts/tension-db-backup-verify.sh" },
+      { label: "DB 백업·복원 검증", href: "/artifacts/tension-db-backup-verify.sh" },
     ],
     stack: "Snort / ModSecurity / Wazuh / Grafana / Ghidra / Procmon",
     image: "tension-architecture.png",
